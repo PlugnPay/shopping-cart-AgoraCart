@@ -3,10 +3,10 @@
 Easy to install payment modules for the AgoraCart shopping cart.
 
 * Smart Screens v2 (Gateway Hosted Solution)
-- [Download For AgoraCart v6.6.x](./AgoraCart v6.6.x/agoracart_ss2_module.zip)
+- ["Download For AgoraCart v6.6.x"](./AgoraCart%20v6.6.x/agoracart_ss2_module.zip)
 
 * Smart Screens v1 (Legacy Gateway Hosted Solution)
-- [Download For AgoraCart v4.x](./AgoraCart v4.x/agoracart_ss1_module.zip)
+- ["Download For AgoraCart v4.x"](./AgoraCart%20v4.x/agoracart_ss1_module.zip)
   
 ## Installation
 
