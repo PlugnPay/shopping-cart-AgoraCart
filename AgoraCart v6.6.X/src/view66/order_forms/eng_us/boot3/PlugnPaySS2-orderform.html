@@ -1,0 +1,277 @@
+<html>
+<head>
+<title>Step One - Secure Checkout Process - PlugnPay.com SSv2</title>
+</head>
+<!--agorascript-orderform
+ &PnPSS2_order_form_prep();
+-->
+
+<body>
+
+<h2>CART CONTENTS HERE</h2>
+
+</form><form method="post" action="agora.cgi">
+
+<!--agorascript-pre
+if ( "$PnPSS2_top_message" ) { return
+q~<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><p class="well">$PnPSS2_top_message</p></div>~
+;}
+-->
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <p><br></p>
+    <div><p class="ac_checkout_top_col">Purchased By:</p></div>
+    <p><br></p>
+    <div class="form-group" id="purchasetable">
+    <label for="Ecom_BillTo_Postal_Name_First">First name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_Name_First" name="Ecom_BillTo_Postal_Name_First" required placeholder="First Name" value="$eform_Ecom_BillTo_Postal_Name_First">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_Name_Last">Last name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_Name_Last" name="Ecom_BillTo_Postal_Name_Last" required placeholder="Last Name" value="$eform_Ecom_BillTo_Postal_Name_Last">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Company_Name">Company name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Company_Name" name="Ecom_BillTo_Company_Name" placeholder="Company Name" value="$eform_Ecom_BillTo_Company_Name">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_Street_Line1">Address:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_Street_Line1" name="Ecom_BillTo_Postal_Street_Line1" required placeholder="Street Address" value="$eform_Ecom_BillTo_Postal_Street_Line1">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_City">City:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_City" name="Ecom_BillTo_Postal_City" required placeholder="City" value="$eform_Ecom_BillTo_Postal_City">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_City">State / Province:</label>
+    <select class="form-control" id="Ecom_BillTo_Postal_City" name="Ecom_BillTo_Postal_StateProv" required>
+      <option value="$eform_Ecom_BillTo_Postal_StateProv">$eform_Ecom_BillTo_Postal_StateProv</option>
+<!--agorascript-pre
+{ return
+qq|$sc_shiptostates_4forms|;}
+ -->
+    </select>
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_PostalCode">Zip / Postal Code:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_PostalCode" name="Ecom_BillTo_Postal_PostalCode" required placeholder="" value="$eform_Ecom_BillTo_Postal_PostalCode">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_CountryCode">Country:</label>
+    <select class="form-control" id="Ecom_BillTo_Postal_CountryCode" name="Ecom_BillTo_Postal_CountryCode" required>
+      <option value="$eform_Ecom_BillTo_Postal_CountryCode">$eform_Ecom_BillTo_Postal_CountryCode</option>
+      <!--agorascript-pre
+
+      if ( "$sc_shiptocountries_4forms" ) { return
+      qq|$sc_shiptocountries_4forms|;}
+      else {
+      return
+      qq|
+      <option>United States</option>
+      <option>Australia</option>
+      <option>Canada</option>
+      <option>Ireland</option>
+      <option>Puerto Rico</option>
+      <option>Scotland</option>
+      <option>United Kingdom</option>
+      <option>Wales</option>
+      |;
+      } -->
+    </select>
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Telecom_Phone_Number">Phone:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Telecom_Phone_Number" name="Ecom_BillTo_Telecom_Phone_Number" required placeholder="000-000-0000" value="$eform_Ecom_BillTo_Telecom_Phone_Number">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Online_Email">Email:</label>
+    <input type="email" class="form-control" id="Ecom_BillTo_Online_Email" name="Ecom_BillTo_Online_Email" required placeholder="name@example.com" value="$eform_Ecom_BillTo_Online_Email">
+
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <p><br></p>
+    <div><p class="ac_checkout_top_col">Ship To: ( if different from billing )</p></div>
+    <p><br></p>
+    <div class="form-group" id="shippingtable">
+    <label for="Ecom_ShipTo_Postal_Name_First">First name:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Postal_Name_First" name="Ecom_ShipTo_Postal_Name_First" placeholder="First Name" value="$eform_Ecom_ShipTo_Postal_Name_First">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_Name_Last">Last name:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Postal_Name_Last" name="Ecom_ShipTo_Postal_Name_Last" placeholder="Last Name" value="$eform_Ecom_ShipTo_Postal_Name_Last">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Company_Name">Company name:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Company_Name" name="Ecom_ShipTo_Company_Name" placeholder="Company Name" value="$eform_Ecom_ShipTo_Company_Name">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_Street_Line1">Address:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Postal_Street_Line1" name="Ecom_ShipTo_Postal_Street_Line1" placeholder="Street Address" value="$eform_Ecom_ShipTo_Postal_Street_Line1">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_City">City:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Postal_City" name="Ecom_ShipTo_Postal_City" placeholder="City" value="$eform_Ecom_ShipTo_Postal_City">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_StateProv">State / Province:</label>
+    <select class="form-control" id="Ecom_ShipTo_Postal_StateProv" name="Ecom_ShipTo_Postal_StateProv">
+      <option value="$eform_Ecom_ShipTo_Postal_StateProv">$eform_Ecom_ShipTo_Postal_StateProv</option>
+<!--agorascript-pre
+{ return
+qq|$sc_shiptostates_4forms|;}
+ -->
+    </select>
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_PostalCode">Zip / Postal Code:</label>
+    <input type="text" class="form-control" id="Ecom_ShipTo_Postal_PostalCode" name="Ecom_ShipTo_Postal_PostalCode" placeholder="" value="$eform_Ecom_ShipTo_Postal_PostalCode">
+    <p><br></p>
+
+    <label for="Ecom_ShipTo_Postal_CountryCode">Country:</label>
+    <select class="form-control" id="Ecom_ShipTo_Postal_CountryCode" name="Ecom_ShipTo_Postal_CountryCode">
+      <option value="$eform_Ecom_ShipTo_Postal_CountryCode">$eform_Ecom_BillTo_Postal_CountryCode</option>
+      <!--agorascript-pre
+
+      if ( "$sc_shiptocountries_4forms" ) { return
+      qq|$sc_shiptocountries_4forms|;}
+      else {
+      return
+      qq|
+      <option>United States</option>
+      <option>Australia</option>
+      <option>Canada</option>
+      <option>Ireland</option>
+      <option>Puerto Rico</option>
+      <option>Scotland</option>
+      <option>United Kingdom</option>
+      <option>Wales</option>
+      |;
+      } -->
+    </select>
+    <p><br></p>
+
+    </div>
+</div>
+<p><br></p>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+<p><br></p>
+<div><p class="ac_checkout_top_col">Select Shipping Method</p></div>
+<p><br></p>
+
+<div class="form-group" id="shipselectiontable">
+
+<label for="Ecom_ShipTo_Method">Shipping Method:</label>
+<select class="form-control" id="Ecom_ShipTo_Method" name="Ecom_ShipTo_Method" required>
+  <option value="$eform_Ecom_ShipTo_Method"><!--agorascript-pre
+   if ( "$eform_Ecom_ShipTo_Method" eq '' ) {
+     return " Select Shipping Method ";
+    } else {
+     return "$eform_Ecom_ShipTo_Method";
+    }
+  --></option>
+  <!--agorascript-pre
+
+   { return
+  qq|$sc_shiptomethod_4forms|;
+  }  -->
+</select>
+
+<p><br></p>
+
+<input type="checkbox" name="Ecom_is_Residential" value="Ship to Residential Address">
+<label for="Ecom_is_Residential">Is this a Residential Address?</label>
+
+<!--agorascript-pre
+if ( "$PnPSS2_display_checkout_tos" =~ /yes/i ) { return
+q|
+</div>
+<p><br></p>
+<div><p class="ac_checkout_top_col">Terms of Service</p></div>
+<p><br></p>
+<div class="form-group" id="tostable">
+$PnPSS2_tos_display_address
+<p><br></p>
+
+<p class="well">You must read the following link before you can continue: &nbsp;&nbsp;&nbsp; <a href="$sc_store_url?cartlink=Terms_of_Service.html" target="_blank"><b>Sales/Terms of Service and Refund Policy</b></a>.<br>
+By selecting the &quot;I have READ &amp; AGREE .... &quot; option, you are acknowledging that you have read and agree to our policies contained within that page.</p>
+<p><br></p>
+<select name="Ecom_tos" class="form-control" required>
+<option value="$eform_Ecom_tos">$eform_Ecom_tos</option>
+<option></option>
+<option value="I have READ and AGREE to the Terms of Service of this store">I have READ &amp; AGREE to the Terms of Service of this store</option>
+</select>
+<p><br></p>
+
+|;} -->
+
+</div>
+
+<p><br></p>
+<div><p class="ac_checkout_top_col">Misc Information</p></div>
+<p><br></p>
+<div class="form-group" id="misctable">
+<!--agorascript-pre
+if ( "$sc_enable_discount" =~ /yes/i ) {
+  if ("$sc_storewide_discount" ne "0") { return
+q~
+<input type="hidden" name="Ecom_Discount" value="storewide">
+Discount Code: <i>Storewide Sale going on. No other discount codes needed.</i>
+~;
+  } else { return
+q~
+<label for="Ecom_Discount">Discount Code:</label>
+<input type="text" class="form-control" id="Ecom_Discount" name="Ecom_Discount" placeholder="" value="$eform_Ecom_Discount">
+~;
+  }
+} elsif ( "$sc_storewide_discount" ne "0" ) { return
+q~
+<input type="hidden" name="Ecom_Discount" value="storewide">
+Discount Code: <i>Storewide Sale going on. No other discount codes needed.</i>
+~;
+}
+-->
+<p><br></p>
+<p><hr></p>
+
+<!--agorascript-pre
+if ("$PnPSS2_special_message" ) { return
+q~<div><p class="ac_checkout_form_messages">$PnPSS2_special_message</p></div>~
+;}
+-->
+
+<label for="Ecom_XCOMMENT_Special_Notes">Special Notes:</label>
+<textarea name="Ecom_XCOMMENT_Special_Notes" class="form-control" rows="5">$eform_Ecom_XCOMMENT_Special_Notes</textarea>
+
+<p><hr></p>
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><p class="well">
+Only one more step! Please click the <b>$agora_verify_order_button_text</b> button below. This will give you the chance to examine your order one last time before you actually submit it to be processed.
+</p></div>
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+<p><br><br></p>
+<input type="hidden" name="gateway" value="PlugnPaySS2">
+<input type="hidden" name="order_form" value="PlugnPaySS2">
+<div class="visible-xs visible-sm">
+    <input class="btn btn-default btn-sm" role="button" type="submit" name="clear_order_form_button" value="$agora_clear_order_form_button_text">
+    <p><br></p>
+    <input class="btn btn-primary btn-sm" role="button" type="submit" name="submit_order_form_button" value="$agora_verify_order_button_text">
+</div>
+<div class="hidden-xs hidden-sm">
+    <input class="btn btn-default btn-lrg" role="button" type="submit" name="clear_order_form_button" value="$agora_clear_order_form_button_text"> &nbsp;
+    <input class="btn btn-primary btn-lrg" role="button" type="submit" name="submit_order_form_button" value="$agora_verify_order_button_text">
+</div>
+<p><br><br><br></p>
+</div>
+
+</form>
+</body>
+</html>

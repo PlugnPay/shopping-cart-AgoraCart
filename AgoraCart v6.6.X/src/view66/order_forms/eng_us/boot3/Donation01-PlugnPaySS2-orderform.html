@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Step One - Secure Donation Process - PlugnPay SSv2</title>
+</head>
+<!--agorascript-orderform
+ &PnPSS2_order_form_prep();
+-->
+
+<body>
+
+<h2>CART CONTENTS HERE</h2>
+
+</form><form method="post" action="agora.cgi">
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <p><br></p>
+    <div><p class="ac_checkout_top_col">Donation Made By:</p></div>
+    <p><br></p>
+    <div class="form-group" id="purchasetable">
+    <label for="Ecom_BillTo_Postal_Name_First">First name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_Name_First" name="Ecom_BillTo_Postal_Name_First" required placeholder="First Name" value="$eform_Ecom_BillTo_Postal_Name_First">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_Name_Last">Last name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_Name_Last" name="Ecom_BillTo_Postal_Name_Last" required placeholder="Last Name" value="$eform_Ecom_BillTo_Postal_Name_Last">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Company_Name">Company name:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Company_Name" name="Ecom_BillTo_Company_Name" placeholder="Company Name" value="$eform_Ecom_BillTo_Company_Name">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_City">City:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_City" name="Ecom_BillTo_Postal_City" required placeholder="City" value="$eform_Ecom_BillTo_Postal_City">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_City">State / Province:</label>
+    <select class="form-control" id="Ecom_BillTo_Postal_City" name="Ecom_BillTo_Postal_StateProv" required>
+      <option value="$eform_Ecom_BillTo_Postal_StateProv">$eform_Ecom_BillTo_Postal_StateProv</option>
+<!--agorascript-pre
+{ return
+qq|$sc_shiptostates_4forms|;}
+ -->
+    </select>
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_PostalCode">Zip / Postal Code:</label>
+    <input type="text" class="form-control" id="Ecom_BillTo_Postal_PostalCode" name="Ecom_BillTo_Postal_PostalCode" required placeholder="" value="$eform_Ecom_BillTo_Postal_PostalCode">
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Postal_CountryCode">Country:</label>
+    <select class="form-control" id="Ecom_BillTo_Postal_CountryCode" name="Ecom_BillTo_Postal_CountryCode" required>
+      <option value="$eform_Ecom_BillTo_Postal_CountryCode">$eform_Ecom_BillTo_Postal_CountryCode</option>
+      <!--agorascript-pre
+
+      if ( "$sc_shiptocountries_4forms" ) { return
+      qq|$sc_shiptocountries_4forms|;}
+      else {
+      return
+      qq|
+      <option>United States</option>
+      <option>Australia</option>
+      <option>Canada</option>
+      <option>Ireland</option>
+      <option>Puerto Rico</option>
+      <option>Scotland</option>
+      <option>United Kingdom</option>
+      <option>Wales</option>
+      |;
+      } -->
+    </select>
+    <p><br></p>
+
+    <label for="Ecom_BillTo_Online_Email">Email:</label>
+    <input type="email" class="form-control" id="Ecom_BillTo_Online_Email" name="Ecom_BillTo_Online_Email" required placeholder="name@example.com" value="$eform_Ecom_BillTo_Online_Email">
+
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<p><br></p>
+<p><hr></p>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><p class="well">
+Only one more step! Please click the <b>$agora_verify_order_button_text</b> button below. This will give you the chance to examine your personal details one last time before proceed to the page to complete your donation.
+</p></div>
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+<p><br><br></p>
+<input type="hidden" name="gateway" value="PlugnPaySS2">
+<input type="hidden" name="order_form" value="PlugnPaySS2">
+<div class="visible-xs visible-sm">
+    <input class="btn btn-primary btn-sm" role="button" type="submit" name="submit_order_form_button" value="$agora_verify_order_button_text">
+</div>
+<div class="hidden-xs hidden-sm">
+    <input class="btn btn-primary btn-lrg" role="button" type="submit" name="submit_order_form_button" value="$agora_verify_order_button_text">
+</div>
+<p><br><br><br></p>
+</div>
+
+</form>
+</body>
+</html>
